@@ -1,0 +1,35 @@
+# modulos necesarios
+import requests
+from bs4 import BeautifulSoup
+
+
+def get_link(a):
+
+    # headers para mini antibots
+    head = {
+        "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36"}
+
+    links = []  # lista donde se guardaran los links
+
+    code = requests.get(a, headers=head)  # peticion http
+
+    if code.status_code == 200:
+
+        # obtencion de el codigo html
+        html = BeautifulSoup(code.text, "html.parser")
+
+        # obtencion de los hostings
+        host = html.find_all("a", {"class": "direct-link"})
+
+        for lk in host:  # iteracion sobre el html
+
+            href = lk["href"]
+
+            limpios = href.replace(" ", "")
+
+            links.append(limpios)
+        return links
+
+
+if __name__ == "__main__":
+    print(get_link("https://latanime.org/ver/dandadan-cr-latino-episodio-17"))
