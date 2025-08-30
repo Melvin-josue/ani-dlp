@@ -1,0 +1,28 @@
+// funciona
+https://www.animebum.net
+https://www.animefenix2.tv
+https://www.anime-jl.net
+https://www.animelatinohd.com
+https://animemeow.xyz
+https://animenix.com
+https://ww3.animeonline.ninja
+
+
+// funciona con redirecion
+https://www.animeid.tv
+
+// funciona con links escondidos
+https://ytanime.tv
+https://animeyt.es
+
+// links escondidos y es para todo 
+https://asialiveaction.com
+
+
+// es para otra cosa
+https://dood.la/
+
+
+// no funciona
+https://ww3.animeflv.net
+https://zevep.com
