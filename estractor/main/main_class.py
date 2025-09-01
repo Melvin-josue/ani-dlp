@@ -1,20 +1,9 @@
 # importar modulos para trabajar
-from http.client import responses
-
 import httpx # para peticiones http
 import cloudscraper # para paginas con cloudflare
 from typing import Optional # para manejo de opciones de datos
 
-HEADERS = {'ACCEPT': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-     'ACCEPT-ENCODING': 'gzip, deflate, br, zstd',
-    'ACCEPT-LANGUAGE': 'es-ES,es;q=0.8,en-US;q=0.5,en;q=0.3',
-    'SEC-FETCH-DEST': 'document',
-    'SEC-FETCH-MODE': 'navigate',
-    'SEC-FETCH-SITE': 'cross-site',
-    'SEC-FETCH-USER': '?1',
-    'SEC-GPC': '1',
-    'UPGRADE-INSECURE-REQUESTS': '1',
-    'USER-AGENT': 'Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0'} # headers para saltar algo de antibots
+HEADERS = {'USER-AGENT': 'Mozilla/5.0 (X11; Linux x86_64; rv:142.0) Gecko/20100101 Firefox/142.0'} # headers para saltar algo de antibots
 
 class GetHtml:
     """ Obtiene html de paginas que no tienen fuerte los antibots"""
@@ -39,3 +28,10 @@ class GetHtmlBot:
             return response.text if response.status_code == 200 else None
         except Exception:
             return None
+
+if __name__ == '__main__':
+    # Crear un objeto de la clase
+    url = "https://jkanime.net/gachiakuta/8/"
+    get_html_bot = GetHtmlBot()
+    lk = get_html_bot.Obten(url)
+    print(lk)

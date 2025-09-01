@@ -37,3 +37,6 @@ def geting_links(url):
     pprint(servers_data)
 
 
+if __name__ == "__main__":
+    url = "https://www.jkanime.net/gachiakuta/8/"
+    geting_links(url)
