@@ -1,19 +1,9 @@
-# modulos para usar el path principal
-import sys
-import os
-
-# 🔥 CORRECCIÓN: Agregar el path del proyecto PRIMERO
-project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
-sys.path.insert(0, project_root)  # 🔥 insert(0) para máxima prioridad
-
 # modulos para parsear el html
 from bs4 import BeautifulSoup
 import json
 import re
 import base64
-from pprint import pprint
-
-
+from pprint import pprint 
 
 # modulos que hice y usare
 from main.main_class import GetHtmlBot
@@ -43,7 +33,7 @@ def geting_links(url):
             remote_decode = base64.b64decode(remote_encode).decode("utf-8")
             server["remote_decode"] = remote_decode
         except:
-            server["remote_decode"] = "erroe decodificando"
+            server["remote_decode"] = "error decodificando"
     pprint(servers_data)
 
 
